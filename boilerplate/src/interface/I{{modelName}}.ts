@@ -6,4 +6,5 @@ export interface I{{modelName}} {
   noteId: string
   no: number
   amount: number
+  status: string
 }

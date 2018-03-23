@@ -5,4 +5,9 @@ import {I{{modelName}}} from './I{{modelName}}'
  * 用于数据库持久化,会带上 mongoose 的操作方法
  */
 export interface I{{modelName}}Model extends I{{modelName}}, Document {
+  updateStatus (): IRepaymentPlanModel
+
+  done (): IRepaymentPlanModel
+
+  fail (): IRepaymentPlanModel
 }
