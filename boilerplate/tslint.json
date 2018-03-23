@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "tslint-config-klg"
+  ],
+  "rules": {
+    "no-console": false,
+    "no-duplicate-imports": false
+  }
+}
