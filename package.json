@@ -1,6 +1,6 @@
 {
   "name": "klg-boilerplate-mongo-model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "klg mongo model template",
   "main": "index.js",
   "scripts": {
