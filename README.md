@@ -1,10 +1,8 @@
-# klg-boilerplate-module
+# klg-boilerplate-mongo-model
 
-copy form egg-init
+Boilerplate for klg model quickstart.
 
-Boilerplate for klg module quickstart. 
-
-klg npm 库模板
+klg npm model 模板, 用于跨项目复用 model
 
 ## Installation
 
@@ -12,7 +10,7 @@ klg npm 库模板
 
 ```bash
 $ npm i -g klg-init
-$ klg-init --type module demo
+$ klg-init --type model demo
 $ cd demo
 $ npm i
 ```
