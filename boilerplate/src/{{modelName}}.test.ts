@@ -1,4 +1,3 @@
-import * as assert from 'power-assert'
 import * as mongoose from 'mongoose'
 import {Model} from 'mongoose'
 import {TestHelper} from './TestHelper'
@@ -24,33 +23,34 @@ describe('{{modelName}}CRUD test', async function () {
 
   it(' save ', async () => {
     await new {{modelName}}(plan).save()
-    const fPlans = await {{modelName}}.find()
-    console.log('fPlans', fPlans)
-    assert.equal(fPlans.length, 1)
-    assert.equal(fPlans[0].userId, 'uu')
-    assert.equal(fPlans[0].noteId, '12')
-    assert.equal(fPlans[0].no, 1)
-    assert.equal(fPlans[0].amount, 3000)
+    const f{{modelName}}s = await {{modelName}}.find()
+    console.log('f{{modelName}}s', f{{modelName}}s)
+    expect(f{{modelName}}s.length).toEqual(1)
+    expect(f{{modelName}}s[0].userId).toEqual('uu')
+    expect(f{{modelName}}s[0].noteId).toEqual('12')
+    expect(f{{modelName}}s[0].no).toEqual(1)
+    expect(f{{modelName}}s[0].amount).toEqual(3000)
   })
 
   it(' update by save', async () => {
-    const fPlan = await {{modelName}}.findOne({no: 1})
-    assert.equal(fPlan.amount, 3000)
-    fPlan.amount = 4000
-    await fPlan.save()
+    const f{{modelName}} = await {{modelName}}.findOne({no: 1})
+    expect(f{{modelName}}.amount).toEqual(3000)
+    f{{modelName}}.amount = 4000
+    await f{{modelName}}.save()
 
-    const newPlan = await {{modelName}}.findOne({no: 1})
-    assert.equal(newPlan.amount, 4000)
+    const new{{modelName}} = await {{modelName}}.findOne({no: 1})
+    expect(new{{modelName}}.amount).toEqual(4000)
   })
 
   it(' update by no', async () => {
     await {{modelName}}.update({no: 1}, {amount: 6000})
 
-    const newPlan = await {{modelName}}.findOne({no: 1})
-    assert.equal(newPlan.amount, 6000)
+    const new{{modelName}} = await {{modelName}}.findOne({no: 1})
+    expect(new{{modelName}}.amount).toEqual(6000)
   })
 
   afterAll((done) => {
+    // TODO 这里释放链接后 测试还是不会停止，需要继续排查
     mongoose.disconnect(done)
   })
 })
